@@ -3,7 +3,7 @@ import figma from "@figma/code-connect";
 
 figma.connect(
   Dialog,
-  "https://www.figma.com/file/SS2xN8AagXT0ofpo8PNIp9?node-id=9215-9336",
+  "https://www.figma.com/design/5NZXEPP8xEkOVu4nUd6fCs/Demo_-Dev-mode?node-id=724-2074",
   {
     props: {
       children: figma.boolean("Actions", {
