@@ -6,38 +6,40 @@ figma.connect(
   "https://www.figma.com/design/5NZXEPP8xEkOVu4nUd6fCs/Demo_-Dev-mode?node-id=724-1834",
   {
     props: {
+      iconEndInstance: figma.instance("↳ Icon End Instance"),
+      iconStartInstance: figma.instance("↳ Icon Start Instance"),
       label: figma.string("Label"),
-      iconEnd: figma.boolean("Icon End", {
-        true: figma.instance("↳ Icon End Instance"),
-        false: undefined,
-      }),
-      iconStart: figma.boolean("Icon Start", {
-        true: figma.instance("↳ Icon Start Instance"),
-        false: undefined,
-      }),
+      iconEnd: figma.boolean("Icon End"),
+      iconStart: figma.boolean("Icon Start"),
       variant: figma.enum("Variant", {
         Inverse: "inverse",
+        Primary: "primary",
         Secondary: "secondary",
       }),
-      disabled: figma.enum("* State", {
-        Disabled: true,
+      state: figma.enum("* State", {
+        Active: "active",
+        Default: "default",
+        Disabled: "disabled",
+        Focus: "focus",
+        Hover: "hover",
       }),
       size: figma.enum("Size", {
+        Medium: "medium",
         Small: "small",
       }),
     },
-    example: ({ label, iconEnd, iconStart, variant, disabled, size }) => (
+    example: (props) => (
       <Button
-        onClick={() => {}}
-        iconEnd={iconEnd}
-        iconStart={iconStart}
-        variant={variant}
-        disabled={disabled}
-        size={size}
+        variant={props.variant}
+        state={props.state}
+        size={props.size}
+        iconStart={props.iconStart}
+        iconEnd={props.iconEnd}
+        iconStartInstance={props.iconStartInstance}
+        iconEndInstance={props.iconEndInstance}
       >
-        {label}
+        {props.label}
       </Button>
     ),
-    links: [{ url: "https://storybookjs.org", name: "Storybook" }],
   }
 );
